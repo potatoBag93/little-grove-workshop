@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#d8eeed" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2375b985'/%3E%3Ccircle cx='32' cy='28' r='15' fill='%23dff2d9'/%3E%3Cpath d='M32 43v13' stroke='%23567559' stroke-width='7'/%3E%3C/svg%3E" />
+    <title>작은 숲 공방</title>
+  </head>
+  <body>
+    <main id="app" aria-label="작은 숲 공방">
+      <canvas id="renderCanvas" aria-label="블록으로 꾸미는 작은 숲"></canvas>
+      <header class="topbar">
+        <div class="brand"><span class="brand-icon">✿</span><span><small>나만의 아늑한 마을</small><strong>작은 숲 공방</strong></span></div>
+        <div class="top-actions"><span id="blockCount" class="counter">0개 놓음</span><button id="saveButton">저장하기</button><button id="helpButton" aria-label="조작 도움말">?</button></div>
+      </header>
+      <div class="welcome-card"><span class="eyebrow">HELLO, BUILDER!</span><strong>마음 가는 대로 만들어봐요</strong><span>블록을 고르고 마을을 눌러 놓아보세요.</span></div>
+      <div id="statusText" class="toast" role="status">블록을 골라 마을을 꾸며보세요</div>
+      <aside class="toolbox" aria-label="만들기 도구">
+        <div class="toolbox-title"><span>✦ 나의 도구함</span><small id="selectedLabel"></small></div>
+        <div id="palette" class="palette"></div>
+        <div class="toolbox-footer"><button data-mode="place" class="active">＋ 놓기</button><button data-mode="erase">⌫ 치우기</button><span id="modeLabel">놓기 모드</span></div>
+      </aside>
+      <div class="bottom-actions"><button id="resetButton">↺ 처음부터</button><span>WASD / 방향키 이동 · 화면 터치로 블록 놓기 · E 모드 전환</span></div>
+      <div class="mobile-pad" aria-label="이동 조작">
+        <button data-move="KeyW" aria-label="위로 이동">▲</button>
+        <div><button data-move="KeyA" aria-label="왼쪽 이동">◀</button><button data-move="KeyS" aria-label="아래로 이동">▼</button><button data-move="KeyD" aria-label="오른쪽 이동">▶</button></div>
+      </div>
+      <dialog id="helpDialog"><h2>작은 숲 공방 사용법</h2><p>블록을 선택하고 땅을 누르면 놓을 수 있어요. 이미 놓은 블록의 윗면을 누르면 쌓을 수 있고, 옆면을 누르면 옆에 놓을 수 있어요. 치우기 모드에서는 블록을 눌러 제거해요.</p><p>WASD 또는 방향키로 산책합니다. 터치 화면에서는 방향 버튼을 누르세요. 1~6으로 블록을 고르고 E로 모드를 바꿀 수 있어요. 마을은 브라우저에 자동 저장됩니다.</p><button id="closeHelp">알겠어요</button></dialog>
+    </main>
+    <script type="module" src="/src/workshop.ts"></script>
+  </body>
+</html>
